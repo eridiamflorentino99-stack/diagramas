@@ -1,0 +1,41 @@
+@startuml Modulo1_GestionProductos
+
+left to right direction
+
+actor Administrador
+
+rectangle "Módulo 1: Gestión de Productos" {
+
+    usecase "Registrar producto" as UC1
+    usecase "Modificar producto" as UC2
+    usecase "Eliminar producto" as UC3
+    usecase "Consultar producto" as UC4
+    usecase "Buscar producto" as UC5
+    usecase "Consultar existencia" as UC6
+    usecase "Actualizar inventario" as UC7
+    usecase "Registrar tallas" as UC8
+    usecase "Registrar colores" as UC9
+    usecase "Registrar marcas" as UC10
+    usecase "Consultar precio" as UC11
+}
+Administrador --> UC1
+Administrador --> UC2
+Administrador --> UC3
+Administrador --> UC4
+Administrador --> UC5
+Administrador --> UC6
+Administrador --> UC7
+Administrador --> UC8
+Administrador --> UC9
+Administrador --> UC10
+Administrador --> UC11
+
+UC1 ..> UC8 : <<include>>
+UC1 ..> UC9 : <<include>>
+UC1 ..> UC10 : <<include>>
+
+UC5 ..> UC4 : <<include>>
+UC4 ..> UC11 : <<include>>
+UC7 ..> UC6 : <<include>>
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml Modulo2_GestionClientes
+
+left to right direction
+
+actor Vendedor
+actor Administrador
+
+rectangle "Módulo 2: Gestión de Clientes" {
+
+    usecase "Registrar cliente" as UC1
+    usecase "Modificar datos del cliente" as UC2
+    usecase "Consultar cliente" as UC3
+    usecase "Buscar cliente" as UC4
+    usecase "Eliminar cliente" as UC5
+    usecase "Consultar historial de compras" as UC6
+}
+
+Vendedor --> UC1
+Vendedor --> UC2
+Vendedor --> UC3
+Vendedor --> UC4
+Vendedor --> UC5
+Vendedor --> UC6
+Administrador --> UC1
+Administrador --> UC2
+Administrador --> UC3
+Administrador --> UC4
+Administrador --> UC5
+Administrador --> UC6
+UC4 ..> UC3 : <<include>>
+UC6 ..> UC3 : <<include>>
+
+@enduml
